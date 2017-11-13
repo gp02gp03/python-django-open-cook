@@ -1,0 +1,13 @@
+ from recipe.models import Recipe
+recipe = Recipe.objects.all()
+r1 = Recipe(title='123')
+
+restaurants = Restaurant.objects.all()
+
+recipe= Recipe.objects.filter(title='123')
+
+
+admin :
+創建指令:winpty python manage.py createsuperuser
+username:opencook
+帳號: hi@opencook.com

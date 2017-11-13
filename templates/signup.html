@@ -1,0 +1,21 @@
+{% extends 'default/base.html' %}
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container main-container">
+        <h1>註冊帳號</h1>
+        <form method="POST" action="/signup/post">
+            <label>請輸入使用者名稱</label>
+            <input class="form-control" type="text" name="username">
+                 <br>
+            <label>請輸入使用者Email</label>
+            <input class="form-control" type="text" name="email">
+                 <br>
+            <label>請輸入密碼</label>
+            <input class="form-control" type="password" name="password">
+            <hr>
+            {% csrf_token %}
+            <button class="btn btn-primary btn-block">送出</button>
+        </form>
+      <hr>
+    </div> <!-- /container -->
+{% endblock %}
