@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+admin.autodiscover()
 
 from mainapp.views import get_index, get_signup, post_signup, post_login, post_logout,get_shop
 from recipe.views import get_recipes_api, get_create_recipe, post_create_recipe, get_recipe
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^signup$', get_signup),
     url(r'^signup/post$', post_signup),
     url(r'^login/post$', post_login),
